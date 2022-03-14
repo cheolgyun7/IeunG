@@ -1,0 +1,753 @@
+//외부 reset.css사용하기
+@import "ieung_reset.css";
+body{
+    width: 100vw;
+    // height: 2000px;
+    // background-color: aquamarine;
+}
+.wide_innerbox{
+    position: relative;
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 100%;
+    // background-color: antiquewhite;
+}
+// 모바일 반응형
+$mb1500: 1500px;
+$mb640: 640px;
+
+@mixin mobile($mb) {
+    @media screen and (max-width: $mb){
+        @content;
+    }
+}
+
+// HEADER
+header>.wide_innerbox{
+    .ieung_logo_box{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        .ieung_button{
+            // background-color: red;
+            line-height: 40px;
+            button{
+                border: none;
+                background-color: rgb(30, 40, 100);
+                border-radius: 40px;
+                padding: 5px 10px;
+                color: #f1f1f1;
+            }
+        }
+        .ieung_search{
+            line-height: 40px;
+        }
+    }
+    .ieung_logo{
+        text-align: center;
+        img{
+            width: 100px;
+        }
+    }
+    #ieung_nav{
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        -webkit-box-align: center;
+        align-items: center;
+        // background-color: antiquewhite;
+        li{
+            width: 150px;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.2rem;
+            display: block;
+            @include mobile($mb1500){
+                font-size: 1rem;
+            }
+            &:hover{
+                .nav{
+                    display: block;
+                }
+            }
+            .nav{
+                position: absolute;
+                display: none;
+                background-color: aqua;
+                z-index: 100;
+                margin-top: 20px;
+                // position: absolute;
+            }
+            a{
+                display: block;
+            }
+        }
+    }
+    .innerbox_icon{
+        height: 30px;
+        padding: 5px 0;
+        .ieung_icon_list{
+            float: right;
+            li{
+                float: left;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+#container{
+    .ieung_slide{
+        height: 600px;
+        overflow: hidden;
+        position: relative;
+        .ieung_mainBanner{
+            width: 400%;
+            height: 100%;
+           li{
+               position: relative;
+               float: left;
+               width: 25%;
+               height: 100%;
+               text-align: center;
+               a{
+                   display: block;
+                   height: 100%;
+                   background: {
+                       position: center center;
+                       repeat: no-repeat;
+                       size: cover;
+                   };
+               }
+               @for $i from 1 to 5 {
+                   &.ieung_mainBanner_slide#{$i}{
+                       a{
+                           background-image: url(../img/event#{$i}.png);
+                       }
+                   }
+               }
+               @include mobile($mb1500){
+               }
+               .event1_pic{
+                   position: absolute;
+                   top: 0;
+               }
+           }
+        }
+        .ieung_mainBannerBtn{
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            li{
+                float: left;
+                a{
+                    display: block;
+                    width: 40px;
+                    height: 2px;
+                    background-color: white;
+                }
+            }
+            .active{
+                a{
+                    background-color: blue;
+                    width: 120px;
+                }
+            }
+        }
+        .ieung_arrow{
+            li{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                a{
+                    color: #f1f1f1;
+                    img{
+                        width: 50px;
+                    }
+                }
+            }
+            .nextBtn{
+                right: 0;
+            }
+        }
+    }
+
+    .ieung_Product{
+        padding-top: 100px;
+        .wide_innerbox{
+            .ieung_Product_title{
+                font-size: 2.5rem;
+                text-align: center;
+            }
+            .ieung_Product_subtitle{
+                display: block;
+                font-size: 1.8rem;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .ieung_Product_box{
+               display: flex;
+               justify-content: space-between;
+            padding: 50px 0;
+            @include mobile($mb640){
+                // flex-direction: column;
+                flex-wrap: wrap;
+            }
+               .ieung_Product_subbox{
+                   position: relative;
+                   width: 20%;
+                   padding: 20px;
+                   border: 1px solid rgb(1, 1, 172);
+                //    background-color: rgb(194, 232, 255);
+                   @include mobile($mb640){
+                       width: 48%;
+                       padding: 20px 0;
+                       margin-top: 10px;
+                   }
+                   &:last-of-type{
+                       .ieung_Product_pic{
+                           img{
+                               margin-top: 40px;
+                               
+                           }
+                       }
+                       p{
+                           margin-top: 30px;
+                       }
+                   }
+                   .ieung_love{
+                       display: block;
+                       position: absolute;
+                       right: 10px;
+                       top: 10px;
+                       z-index: 10;
+                   }
+                   .ieung_Product_pic{
+                    //    height: 300px;
+                    //    background-color: red;
+                       img{
+                           width: 100%;
+                       }
+                   }
+                   p{
+                       padding: 20px 0;
+                       font-size: 1.3rem;
+                       font-weight: bold;
+                       margin-left: 30px;
+                       @include mobile($mb640){
+                        font-size: 1rem;
+                    }
+                   }
+                   
+                   span{
+                       display: block;
+                       text-align: left;
+                       margin-left: 30px;
+                       font-size: 0.9rem;
+                       line-height: 1.6;
+                       overflow: hidden;
+                       text-overflow: ellipsis;
+                       display: -webkit-box;
+                       -webkit-line-clamp: 3;
+                       -webkit-box-orient: vertical;
+                       @include mobile($mb640){
+                        font-size: 0.8rem;
+                    }
+                   }
+                   .buy{
+                       width: 180px;
+                       height: 40px;
+                       background-color: rgb(14, 14, 14);
+                       margin: 0 auto;
+                       margin-top: 30px;
+                    //    position: absolute;
+                    //    bottom: 30px;
+                    //    left: 50%;
+                    //    transform: translateX(-50%);
+                       border-radius: 40px;
+                       transition: 1s;
+                       text-align: center;
+                       a{
+                           line-height: 40px;
+                           display: block;
+                           color: #f2f2f2;
+                       }
+                       &:hover{
+                           background-color: rgb(195, 201, 255);
+                           a{
+                               color: rgb(22, 22, 22);
+                           }
+                       }
+                   }
+               }
+            }
+            .more{
+                width: 200px;
+                height: 40px;
+                background-color: #111;
+                margin: 0 auto;
+                text-align: center;
+                a{
+                    line-height: 40px;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.ieung_Product_parts_box{
+    position: relative;
+    height: 900px;
+    // background-color: #111;
+    margin-top: 50px;
+    @include mobile($mb640){
+        height: 1500px;
+    }
+    form{
+        position: absolute;
+        width: 20%;
+        text-align: left;
+        font-size: 1.5rem;
+        @include mobile($mb640){
+            position: static;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        p{
+            padding: 20px 0;
+        }
+        
+        input[type="checkbox"]{
+            width: 25px;
+            height: 25px;
+            margin-right: 20px;
+        }
+    }
+    .ddd{
+        position: absolute;
+        right: 0;
+        width: 80%;
+        height: 800px;
+        // background-color: blue;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include mobile($mb640){
+            width: 100%;
+        }
+        
+        .ieung_Product_parts{
+            width: 24%;
+            height: 48%;
+            // background-color: brown;
+            border: 1px solid black;
+            box-sizing: border-box;
+            padding-bottom: 50px;
+            @include mobile($mb640){
+                width: 48%;
+                margin-top: 10px;
+            }
+            .ieung_Product_parts_img{
+                height: 60%;
+                display: block;
+                // background-color: #414141;
+                // padding: 40px;
+                img{
+                    height: 100%;
+                    margin: 0 auto;
+                    display: none;
+                    &:nth-of-type(4){
+                        display: block;
+                    }
+                }
+            }
+            .ieung_Product_parts_explain{
+                // background-color: aqua;
+                p{
+                    display: none;
+                    &:nth-of-type(4){
+                        display: block;
+                    }
+                    span{
+                        text-align: center;
+                        display: block;
+                        padding: 10px 0;
+                        &:first-of-type{
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .more{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.ieung_Recommend{
+    height: 2100px;
+    margin-top: 100px;
+    .wide_innerbox{
+        // background-color: #c3c3c3;
+        h3{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+        }
+        .recommend_1{
+            position: relative;
+            height: 500px;
+            &:nth-of-type(2){
+                .recommend_title{
+                    right: 0;
+                }
+                .recommend_pic{
+                    left: 30px;
+                }
+                .recommend_back{
+                    background-color: #ffffff;
+                    border: 2px solid #c3f7f5;
+                }
+            }
+            &:nth-of-type(3){
+                .recommend1_img{
+                    p{
+                        margin-top: 50px;
+                    }
+                }
+                .recommend_back{
+                    background-color: #ffffff;
+                    border: 2px solid #cfcaca;
+                }
+            }
+            &:nth-of-type(4){
+                .recommend_title{
+                    width: 50%;
+                    right: 0;
+                }
+                .recommend_pic{
+                    left: 30px;
+                }
+                .recommend1_img{
+                    p{
+                        width: 100%;
+                        max-width: none;
+                        margin-top: 100px;
+                    }
+                }
+                .recommend_back{
+                    background-color: #ffffff;
+                    border: 2px solid #f3f3f3;
+                }
+            }
+            div{
+                float: left;
+            }
+            .recommend1_img{
+                width: 50%;
+                height: 100%;
+                // background-color: yellowgreen;
+                p{
+                    width: 50%;
+                    margin: 0 auto;
+                    margin-top: 25px;
+                    max-width: 350px;
+                    img{
+                        width: 100%;
+                    }
+                    // text-align: right;
+                }
+            }
+            .recommend1_subtitle{
+                position: relative;
+                width: 50%;
+                height: 100%;
+                // background-color: red;
+                font-size: 2.5rem;
+                span{
+                    position: absolute;
+                    top: 40%;
+                    transform: translateY(-40%);
+                    display: block;
+                    &:last-of-type{
+                        font-size: 1.2rem;
+                        margin-top: 150px;
+                    }
+                }
+                .recommend_pic{
+                    position: absolute;
+                    right: 30px;
+                    bottom: 30px;
+                    width: 150px;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .recommend_back{
+                position: absolute;
+                z-index: -10;
+                width: 100%;
+                height: 200px;
+                bottom: 0;
+                // background-color: rgb(189, 189, 255);
+                border: 2px solid rgb(189, 189, 255);
+            }
+        }
+        // div{
+        //     position: absolute;
+        //     width: 30%;
+        //     float: left;
+        //     margin: 0 auto;
+        //     padding-top: 100px;
+        //     &:last-of-type{
+        //         right: 0;
+        //         // right: 0;
+        //         // background-color: rgb(143, 221, 136);
+        //         margin-top: 350px;
+        //     }
+        //     p{
+        //         position: relative;
+        //         padding: 30% 30% 20%;
+        //         border: 2px solid rgb(218, 218, 218);
+        //         // background-color: rgb(194, 232, 255);
+        //         &:last-of-type{
+        //             margin-top: 200px;
+        //         }
+        //         img{
+        //             width: 100%;
+        //             position: relative;
+        //             box-shadow: rgba(0,0,0,0.5);
+        //             // left: -80%;
+        //             min-width: 150px;
+        //         }
+        //     }
+        //     .recommend_title{
+        //         // display: none;
+        //         font-size: 1.2rem;
+        //         display: block;
+        //         background-color: rgb(108, 189, 255);
+        //         text-align: center;
+        //         margin-top: 50px;
+        //         padding: 5px 10px;
+        //         border-radius: 20px;
+        //     }
+        //     .recommend_button{
+        //         position: absolute;
+        //         right: -10px;
+        //         top: 50%;
+        //         transform: translateY(-50%);
+        //         display: block;
+        //         width: 25px;
+        //         height: 80px;
+        //         background-color: rgb(218, 137, 255);
+        //     }
+        // }
+    }
+}
+.ieung_logitech{
+    // max-width: 1920px;
+    padding: 100px 0;
+    margin: 0 auto;
+    position: relative;
+    .ieung_parallax{
+        height: 700px;
+        // background-position: center 0;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        background-attachment: fixed;
+        background-image: url(../img/logitech_event.jpg);
+    }
+    .ieung_logitech_box{
+        position: absolute;
+        top: 200px;
+        left: 100px;
+        color: #f1f1f1;
+        h4{
+            font-size: 3rem;
+            padding-bottom: 50px;
+        }
+        span{
+            display: block;
+            font-size: 1.5rem;
+            &:nth-of-type(2){
+                margin-top: 40%;
+            }
+        }
+        .ieung_logitech_discount{
+            line-height: 2;
+        }
+    }
+    img{
+        width: 100%;
+    }
+    .wide_innerbox{
+        position: relative;
+        width: 1260px;
+        height: 700px;
+        margin-top: 50px;
+        background-color: #c3c3c3;
+        h4{
+            width: 180px;
+            margin: 0 auto;
+            padding: 50px 0;
+            img{
+                width: 100%;
+            }
+        }
+        .logitech_title{
+            // background-color: red;
+            text-align: center;
+            a{
+                font-size: 1.5rem;
+                &:first-of-type{
+                    font-size: 2.5rem;
+                }
+                .com_parts{
+                    // font-size: 3rem;
+                    margin: 30px;
+                }
+            }
+        }
+        .ieung_logitech_explain{
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            background-color: black;
+
+            z-index: 1000;
+          p{
+            color: #f1f1f1;
+            width: 90%;
+            margin: 0 auto;
+            &:first-of-type{
+                font-size: 3rem;
+                padding: 60px 0;
+            }
+          }  
+        }
+        .ieung_logitech_kinds{
+            position: absolute;
+            bottom: 10%;
+            right: 30px;
+            max-width: 1000px;
+            height: 400px;
+            background-color: white;
+            display: flex;
+            .ieung_block{
+                width: 30%;
+                height: 100%;
+                // background-color: rgb(175, 108, 108);
+            }
+            .ieung_logitech_kinds_pic{
+                width: 70%;
+                height: 100%;
+                // background-color: antiquewhite;
+                ul{
+                    display: flex;
+                    height: 100%;
+                    justify-content: space-around;
+                    align-items: center;
+                    opacity: 0;
+                    // display: none;
+                    &:first-of-type{
+                        // display: block;
+                        opacity: 1;
+                    }
+                    &:nth-of-type(2){
+                        // display: none;
+                    }
+                    li{
+                        width: 30%;
+                        // background-color: aqua;
+                        &:nth-of-type(2){
+                            padding-top: 20px;
+                        }
+                        span{
+                            display: block;
+                            text-align: center;
+                            padding-top: 20px;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.ieung_eventpage{
+    .wide_innerbox{
+        width: 100%;
+        height: 500px;
+        // background-color: rgb(127, 236, 255);
+        display: flex;
+        justify-content: space-around;
+        .ieung_eventpage_box{
+            // float: left;
+            width: 20%;
+            height: 400px;
+            // margin-left: 10px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+footer{
+    height: 500px;
+    background-color: antiquewhite;
+    h1{
+        padding: 30px 0;
+    }
+    address{
+        width: 60%;
+        float: left;
+        span{
+            display: block;
+            line-height: 2;
+        }
+        .ieung_foot_oner{
+            display: block;
+            font-size: 1.5rem;
+            padding: 30px 0;
+        }
+    }
+    .footMenu{
+        position: absolute;
+        right: 0;
+        width: 40%;
+        padding-top: 100px;
+        // height: 400px;
+        // background-color: red;
+        ul{
+            li{
+                // background-color: aqua;
+                margin: 0 5%;
+                a{
+                    margin: 30px 0;
+                }
+                float: left;
+                display: block;
+                ul{
+                    li{
+                        float: none;
+                        width: 100%;
+                        line-height: 2;
+                    }
+                }
+            }
+        }
+    }
+}
