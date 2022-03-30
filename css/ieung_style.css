@@ -10,19 +10,25 @@
 header .ieung_notice {
   position: relative;
   height: 100px;
-  background-color: #caeaff;
 }
 header .ieung_notice .wide_innerbox {
   background: #98d8d3;
 }
 header .ieung_notice .ieungX {
   display: block;
-  width: 100px;
-  height: 50px;
-  background-color: #caeaff;
+  width: 20px;
+  background-color: #fdfdfd;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
+}
+header .ieung_notice .ieungX img {
+  width: 100%;
+}
+@media screen and (max-width: 1080px) {
+  header .ieung_notice .ieungX {
+    display: none;
+  }
 }
 @media screen and (max-width: 640px) {
   header {

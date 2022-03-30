@@ -1,11 +1,5 @@
 //외부 reset.css사용하기
 @import "ieung_reset.css";
-body{
-    // overflow: hidden;
-    // width: 100vw;
-    // height: 2000px;
-    // background-color: aquamarine;
-}
 .wide_innerbox{
     position: relative;
     width: 90%;
@@ -35,19 +29,25 @@ header{
     .ieung_notice{
         position: relative;
         height: 100px;
-        background-color: #caeaff;
+        // background-color: #caeaff;
         // background: bisque;
         .wide_innerbox{
             background: #98d8d3;
         }
         .ieungX{
             display: block;
-            width: 100px;
-            height: 50px;
-            background-color: #caeaff;
+            width: 20px;
+            // height: 50px;
+            background-color: #fdfdfd;
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 5px;
+            right: 5px;
+            img{
+                width: 100%;
+            }
+            @include mobile($mb1080){
+                display: none;
+            }
         }
     }
     @include mobile($mb640){

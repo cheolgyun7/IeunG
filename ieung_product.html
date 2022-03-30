@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/ieung_reset.css">
     <link rel="stylesheet" href="css/ieung_style.css">
+    <link rel="stylesheet" href="css/ieung_mypage.css">
     <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="jquery/ieung_mypage.js"></script>
     <script>
         $(function(){
             $(".header").load("ieung_header_footer.html header")
@@ -17,6 +19,127 @@
 </head>
 <body>
     <div class="header"></div>
+    <section id="section_1">
+        <div class="wide_innerbox">
+            <h1>My page</h1>
+            <div class="subtitle">
+                <span>000님, 안녕하세요</span>
+                <button>로그인</button>
+            </div>
+            <div class="mypage_menu">
+                <div class="mypage_submenu">
+                    <a href="#void">
+                        <img src="img/review.png" alt="">
+                    </a>
+                    <span>리뷰 작성하러 가기</span>
+                </div>
+                <div class="mypage_submenu">
+                    <a href="#void">
+                        <img src="img/qa.png" alt="">
+                    </a>
+                    <span>Q & A</span>
+                </div>
+                <div class="mypage_submenu">
+                    <a href="#void">
+                        <img src="img/coupon.png" alt="">
+                    </a>
+                    <span>Coupon</span>
+                </div>
+                <div class="mypage_submenu">
+                        
+                    <div class="back"><img src="img/logo.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="section_2">
+        <div class="wide_innerbox">
+            <div class="ieung_sub_information clear">
+                <div class="ieung_sub_information_title">
+                    <a class="active" href="#void">나의 구매목록</a>
+                    <a href="#void">보유중인쿠폰</a>
+                    <a href="#void">회원 혜택</a>
+                    <a href="#void">내 배송지 확인</a>
+                </div>
+                <div>
+                    <ul class="information_my_subtitle">
+                        <li class="information_subtitle">
+                            날짜
+                            <ul>
+                                <li>1/12</li>
+                                <li>1/31</li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            제품
+                            <ul>
+                                <li><img src="img/rtx3070.jpg" alt="rtx3070"></li>
+                                <li><img src="img/ieungR.jpg" alt="recommend추천1"></li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            제품명
+                            <ul>
+                                <li>RTX 3070 ti</li>
+                                <li>Ieung추천2</li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            가격
+                            <ul>
+                                <li>612,000원</li>
+                                <li>770,000원</li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            주문번호
+                            <ul>
+                                <li>faw1123aa</li>
+                                <li>a11aaa123</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="information_my_subtitle">
+                        <li class="information_subtitle">
+                            쿠폰번호
+                            <ul>
+                                <li>212</li>
+                                <li>112</li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            쿠폰명
+                            <ul>
+                                <li>Ieung 가입기념 30%쿠폰</li>
+                                <li>추천품목구매 쿠폰 50%</li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            할인금액
+                            <ul>
+                                <li>10만원 이상 30%</li>
+                                <li>10만원이하 제품 구매시 50%</li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            유효기간
+                            <ul>
+                                <li>가입 후 5개월</li>
+                                <li>2/21 ~ 4/5</li>
+                            </ul>
+                        </li>
+                        <li class="information_subtitle">
+                            적용상품
+                            <ul>
+                                <li>전상품</li>
+                                <li>10만원 이하 상품</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="footer"></div>
 </body>
 </html>

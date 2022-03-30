@@ -125,6 +125,7 @@ $(function () {
     $(".logitech_title>a").on("click",function(e){
         e.preventDefault();
         var logiBtn = $(this).index();
+        console.log(logiBtn);
         $(".ieung_logitech_kinds_pic>.ieung_logitech_keyboard").eq(logiBtn).fadeIn(1000).siblings().fadeOut(1000);
         $(this).addClass('active').siblings().removeClass('active');
         $(".ieung_logitech_explain>p").eq(logiBtn).show().siblings().hide();
